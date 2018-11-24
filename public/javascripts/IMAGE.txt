@@ -1,0 +1,291 @@
+***********************************************************************************************
+
+  <div class="form-group">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-8"></br>
+                        <div class="col-sm-3">
+                            <label for="image">Pièce jointe :<span style="color : red;">*</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img class="tim-fig"src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" id="vuepiece" alt="" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <span class="btn btn-warning btn-file"  style="font-size:17px">
+                                        <span class="fileupload-new "><i class="fa fa-paper-clip"></i> Choisir la pièce jointe</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Changer la pièce jointe</span>
+                                        <input type="file" name ="imageProd" id="edit-piecejointe" class="form-control"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+******************************************************************************************************
+
+
+                <div class="col-sm-8 col-12">
+                    <h2 style="color: black;margin-bottom: 50px;margin-right: 390px"><strong>Finaliser mes achats</strong></h2>
+                    <div  style=" width: 100%;">
+                        <ul  id="progressbar" style="padding-top: 25px; padding-bottom: 0px;text-align:center;">
+                            <li class="itl active" style="color: black;font-size: 12px;" >Panier</li>
+                            <li class="itl" style="color: black;font-size: 12px">Détails client</li>
+                            <li class="itl" style="color: black;font-size: 12px">Mode de livraison</li>
+                            <li class="itl" style="color: black;font-size: 12px">Paiement</li>
+                            <li class="itl" style="color: black;font-size: 12px">Récapitulatif</li>
+                        </ul>
+                    </div>
+                    <!-- fieldsets -->
+                    <!--La page de panier-->
+                    <form class="col-sm-12 col-12" id="msform" action="">
+                        <fieldset>
+                            <h2 class="fs-title">Votre panier est prêt</h2>
+                            <h3 class="fs-subtitle">Nous allons confirmer votre commande</h3>
+                            <p></p>
+                            <a href="@{controllers.portals.client.Dashboard.panier}"><button class="btn btn-success" style="width:30%">Retour</button></a>
+                            <input type="button" name="next" class="next action-button" value="Suivant" />
+                        </fieldset>
+
+                        <fieldset>
+                            <h2 class="fs-title" style="text-align:center;margin-top:10px">Détails client</h2>
+                            </br>
+                            <div>
+                                <div class="form-check" style="padding-left: 3.25rem">
+                                    <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio10">
+                                    <label class="form-check-label" for="radio10" style="margin-left:20px">J'ai un compte</label></br>
+                                </div>
+
+                                <!--La première partie, jai un compte-->
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputEm">Email</label>
+                                        <input type="text" name="email" style="padding:5px" id="inputEm" placeholder="johnson@gmail.com"/>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputEm1">Mot de passe</label>
+                                        <input type="password" style="padding:5px"style="padding:5px" id="inputEm1" name="pass"/>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary" style="width:100%">Se Connecter</button>
+                                    </div>
+                                </div>
+                                <!--Fin de la première partie-->
+                            </div>
+                            </br>
+
+                            <!--Deuxème partie je n'ai pas de compte-->
+                            <div>
+                                <div class="form-check" style="padding-left: 3.25rem">
+                                    <input onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" class="form-check-input" name="group100" type="radio" id="radio101">
+                                    <label class="form-check-label" for="radio101" style="margin-left:20px">Je n'ai pas de compte</label></br>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputnom">Nom</label>
+                                        <input type="text" style="padding:5px" class="form-control" id="inputnom">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputPren">Prénom(s)</label>
+                                        <input type="text" style="padding:5px" class="form-control" id="inputPren">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label for="inputEmail2">Email</label>
+                                        <input type="email" style="padding:5px" class="form-control" id="inputEmail2" placeholder="johnson@gmail.com">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputTel">Téléphone</label>
+                                        <input type="tel" style="padding:5px" class="form-control" id="inputTel">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <label class="control-label" for="adresseAd">Adresse</label>
+                                    <input name="adresse" type="text" class="form-control" id="adresseAd" required>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-6">
+                                        <label class="control-label" for="sexe">Sexe</label>
+                                        <select name="sexe" class="form-control">
+                                            <option selected value="Masculin">Masculin</option>
+                                            <option value="Feminin">Féminin</option>
+                                            <option value="Inconnu">Je ne sais pas</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label" for="loginAd">Login</label>
+                                        <input name="login" type="text" class="form-control" id="loginAd" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="inputMdp">Mot de passe</label>
+                                        <input type="password" style="padding:5px" class="form-control" id="inputMdp">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="inputMdp2">Confirmation du mot de passe</label>
+                                        <input type="password" style="padding:5px" class="form-control" id="inputMdp2">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button "value="Retour au panier" />
+                            <input type="button" name="next" class="next action-button" value="Continuer sur le mode de livraison" />
+
+                            <!--Fin de la deuxième partie-->
+
+                        </fieldset>
+
+                        <!--La page du mode de livraison-->
+                        <fieldset>
+                            <h2 class="fs-title">Mode de livraison</h2>
+
+                            <div class="form-group" style="padding:10px 20px 0px;margin-right: 15px">
+                                <div class="form-checkform-group" style="margin-left: -17.25rem;margin-top: 44px;margin-bottom: -43px;">
+                                    <input style="width:auto;margin-top: -0.5rem;margin-left: -9rem" class="form-check-input" name="group103" type="radio" id="radio103">
+                                    <label class="form-check-label" for="radio103"></label>
+                                </div>
+                                <input type="text" class="form-control" style="padding:10px" placeholder="Retrait sur place" readonly>
+                            </div></br>
+
+                            <div class="form-group" style="margin-top: 35px;margin-right: 35px;margin-left: 21px">
+
+                                <div class="form-checkform-group" style="margin-left: -12px;margin-top: 44px;margin-bottom: -43px;">
+                                    <input style="width:auto;margin-left: -275px;margin-top: -0.5rem" class="form-check-input" name="group100" type="radio" id="radio104">
+                                    <label class="form-check-label" for="radio101"></label>
+
+                                </div>
+                                <input type="text" class="form-control" style="padding:10px" placeholder="Livraison à domicile" readonly>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <label for="inputadr">Adresse de livraison</label>
+                                    <input type="text" style="padding:5px" class="form-control" id="inputadr">
+                                </div>
+                                <div class="form-group col-md-4" style="margin-top: 30px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+
+                            <input type="button" name="previous" class="previous action-button" value="Retour au détails client" />
+                            <input type="button" name="next" class="next action-button" value="Continuer sur le mode de paiement" />
+
+                        </fieldset>
+
+                        <!--La page du mode de paiement-->
+
+                        <fieldset>
+                            <h2 class="fs-title">Mode de paiement</h2>
+
+                            <div class="row">
+                                <div class=" col-8">
+                                    <input type="text" style="padding:5px" class="form-control" placeholder="Adresse de livraison: " readonly>
+                                </div>
+                                <div class="col-4" style="margin-top: 6px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class=" col-8">
+                                    <input type="text" class="form-control" placeholder="Mode de livraison: " readonly>
+                                </div>
+                                <div class="col-4" style="margin-top: 8px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-6" style="padding:10px 20px 0px;margin-right: 15px;margin-top:0px;margin-left:10px">
+
+                                    <div style="margin-left: 0px;margin-top: 44px;margin-bottom: -43px;">
+                                        <input style="width:auto" class="form-check-input" name="group100" type="radio" id="radio105">
+                                        <label class="form-check-label" for="radio105"></label>
+
+                                    </div>
+                                    <input type="text" placeholder="Carte de crédit" readonly>
+                                </div>
+
+                                <div class="col-6" style="margin-top: 0px;margin-right: 35px;margin-left: 16px">
+
+                                    <div  style="margin-left: -12px;margin-top: 44px;margin-bottom: -43px;">
+                                        <input style="width:auto;margin-left: -8px" class="form-check-input" name="group100" type="radio" id="radio106">
+                                        <label for="radio101"></label>
+
+                                    </div>
+                                    <input type="text"  placeholder="Porte-monnaie électronique" readonly>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-8">
+                                    <label for="inputadr2">Adresse de livraison</label>
+                                    <input type="text" style="padding:5px" class="form-control" id="inputadr2">
+                                </div>
+                                <div class="col-4" style="margin-top: 35px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="Retour au mode de livraison" />
+                            <input type="button" name="next" class="next action-button" value="Terminer mon achat" />
+
+                        </fieldset>
+
+                        <!--La page de récapitulatif-->
+                        <fieldset>
+                            <h2 class="fs-title">Récapitulatif</h2>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" style="padding:5px" class="form-control" placeholder="Adresse de livraison: " readonly>
+                                </div>
+                                <div class="col-4" style="margin-top: 6px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" style="padding:5px" class="form-control" placeholder="Mode de livraison: " readonly>
+                                </div>
+                                <div class="col-4" style="margin-top: 8px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" style="padding:5px" class="form-control" placeholder="Mode de paiement: " readonly>
+                                </div>
+                                <div class="col-4" style="margin-top: 6px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" style="padding:5px" class="form-control" placeholder="Adresse de facturation: " readonly>
+                                </div>
+                                <div class=" col-4" style="margin-top: 8px">
+                                    <a href="#"><button class="btn btn-default">Modifier</button></a>
+                                </div>
+                            </div>
+
+                            <input type="button" name="previous" class="previous action-button" value="Retour au mode de paiement" />
+                            <input type="submit" name="submit" class="submit action-button" value="Confirmer ma commande" />
+                        </fieldset>
+
+                    </form>
+
+                </div>
+
+/*****************************************************************************************************************
